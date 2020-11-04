@@ -1,7 +1,11 @@
 import express, { Request, Response } from "express"
 import cors from "cors"
 import bodyParser from "body-parser"
+import dotenv from "dotenv"
+import template from './templates/email';
 
+// Load env variables
+dotenv.config()
 
 const app = express()
 
@@ -16,5 +20,5 @@ app.get('/', (req: Request, res: Response) => {
 })
 
 app.listen(process.env.PORT || 8000, () => {
-  console.log('TS-Mailer is running');
+  console.log('TS-Mailer is running')
 })
