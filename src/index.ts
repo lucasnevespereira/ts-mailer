@@ -16,11 +16,13 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Welcome to TS-Mailer! 👁')
 })
 
+
+
 app.post('/send', (req: Request, res: Response) => {
   let data = req.body
   try {
-    const result = functions.sendMail(data)
-    res.send(result)
+    functions.sendMail(data)
+    res.send("Mail Sent")
   } catch (e) {
     throw new Error(e)
   }
